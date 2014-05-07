@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140507151140) do
+ActiveRecord::Schema.define(version: 20140507152720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "players", force: true do |t|
-    t.text     "name"
+    t.text     "name",        null: false
     t.text     "description"
     t.text     "job"
     t.integer  "health"
@@ -29,5 +29,7 @@ ActiveRecord::Schema.define(version: 20140507151140) do
     t.text     "hair_color"
     t.text     "skin_color"
   end
+
+  add_index "players", ["name"], name: "index_players_on_name", unique: true, using: :btree
 
 end
