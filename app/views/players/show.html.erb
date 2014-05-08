@@ -1,6 +1,8 @@
 <h1><%= @player.name %></h1>
 <p><%= @player.description %></p>
 
+<%= link_to 'Edit this player', edit_player_path(@player) %>
+
 <ul>
   <li>Job: <%= @player.job %></li>
   <li>Health: <%= @player.health %></li>

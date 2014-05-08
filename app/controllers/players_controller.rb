@@ -16,6 +16,16 @@ class PlayersController < ApplicationController
     redirect_to player
   end
 
+  def edit
+    @player = Player.find(params[:id])
+  end
+
+  def update
+    player = Player.find(params[:id])
+    player.update(player_params)
+    redirect_to player
+  end
+
   private
 
   def player_params
