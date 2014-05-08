@@ -1,6 +1,10 @@
 <h1>Players</h1>
-
-<%= link_to 'New player', new_player_path %>
+<p><%= link_to 'New player', new_player_path %></p>
+<p>
+  <% Player::JOBS.each do |job| %>
+    <%= link_to job, root_path(job: job) %>
+  <% end %>
+</p>
 
 <ul>
   <% @players.each do |player| %>

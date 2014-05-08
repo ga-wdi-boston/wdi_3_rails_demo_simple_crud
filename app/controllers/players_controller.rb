@@ -1,6 +1,10 @@
 class PlayersController < ApplicationController
   def index
     @players = Player.order(:name)
+
+    if params[:job].present?
+      @players = @players.where(job: params[:job])
+    end
   end
 
   def show
