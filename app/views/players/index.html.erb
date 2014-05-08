@@ -1,0 +1,15 @@
+<h1>Players</h1>
+
+<ul>
+  <% @players.each do |player| %>
+    <li>
+      <%= player.name %> (<%= player.job %>)
+      | <%= player.health %>
+      | <%= player.magic %>
+
+      <% unless player.is_alive %>
+        | Dead
+      <% end %>
+    </li>
+  <% end %>
+</ul>
