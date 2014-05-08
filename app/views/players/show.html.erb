@@ -1,0 +1,11 @@
+<h1><%= @player.name %></h1>
+<p><%= @player.description %></p>
+
+<ul>
+  <li>Job: <%= @player.job %></li>
+  <li>Health: <%= @player.health %></li>
+  <li>Magic: <%= @player.magic %></li>
+  <% unless @player.is_alive %>
+    <li>Unfortunately this player is dead</li>
+  <% end %>
+</ul>

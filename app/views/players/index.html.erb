@@ -3,7 +3,8 @@
 <ul>
   <% @players.each do |player| %>
     <li>
-      <%= player.name %> (<%= player.job %>)
+      <%= link_to player.name, player %>
+      (<%= player.job %>)
       | <%= player.health %>
       | <%= player.magic %>
 
